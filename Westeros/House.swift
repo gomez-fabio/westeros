@@ -24,6 +24,7 @@ final class House{
     let words   : Words
     
     private var _members  : Members
+
     
     // Inicializador
     init(name: String, sigil: Sigil, words: Words){
@@ -58,57 +59,48 @@ extension House{
     }
 }
 
+
 extension House{
-    var proxy : String{
-        return "\(name) \(words)"
-    }
-}
-
-// INICIO DEBERES
-
-extension House : Hashable {
-    var hashValue: Int {
+    var proxyForEquality : String{
         get{
-            return proxy.hashValue
+            return "\(name) \(words) \(count)"
+        }
+    }
+    
+    var proxyForComparison : String{
+        get{
+            return name.uppercased()
         }
     }
 }
 
 
+
+// MARK: - Equatable
 extension House : Equatable{
     static func ==(lhs: House, rhs: House) -> Bool {
-        return lhs.proxy == rhs.proxy
+        return lhs.proxyForEquality == rhs.proxyForEquality
+    }
+    
+}
+
+// MARK: - Hashable
+extension House : Hashable{
+    var hashValue: Int {
+        return proxyForEquality.hashValue
     }
 }
 
-extension House : Comparable {
-    static func >(lhs : House, rhs: House) -> Bool{
-        return lhs.proxy > rhs.proxy
+// MARK: - Comparable
+extension House : Comparable{
+    static func <(lhs: House, rhs: House) -> Bool {
+        return lhs.proxyForComparison < rhs.proxyForComparison
     }
     
-    static func >=(lhs : House, rhs: House) -> Bool{
-        return lhs.proxy >= rhs.proxy
-    }
     
-    static func <(lhs : House, rhs: House) -> Bool{
-        return lhs.proxy < rhs.proxy
-    }
     
-    static func <=(lhs : House, rhs: House) -> Bool{
-        return lhs.proxy <= rhs.proxy
-    }
 }
 
-
-// FIN DEBERES
-
-
-
-
-// protocolos a implementar en house
-//Equatable
-//Hashable
-//Comparable (este también en person)
 
 
 

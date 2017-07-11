@@ -11,18 +11,18 @@ import XCTest
 
 class HouseTests: XCTestCase {
     
-    var starkImage  : UIImage!
+    var starkImage : UIImage!
     var lannisterImage : UIImage!
     
-    var starkSigil     : Sigil!
-    var lannisterSigil  : Sigil!
+    var starkSigil : Sigil!
+    var lannisterSigil : Sigil!
     
     var starkHouse : House!
     var lannisterHouse : House!
     
-    var robb  : Person!
-    var arya  : Person!
-    var tyrion  : Person!
+    var robb : Person!
+    var arya : Person!
+    var tyrion : Person!
     
     override func setUp() {
         super.setUp()
@@ -67,19 +67,33 @@ class HouseTests: XCTestCase {
         XCTAssertNotNil(lannisterSigil)
     }
     
-    //
-    func testAddPersons(){
-        XCTAssertEqual(starkHouse.count, 0)
+    
+    func testHouseEquality(){
         
-        starkHouse.add(person: robb)
-        XCTAssertEqual(starkHouse.count, 1)
+        // Identidad
+        XCTAssertEqual(starkHouse, starkHouse)
         
-        starkHouse.add(person: arya)
-        XCTAssertEqual(starkHouse.count, 2)
-
-        starkHouse.add(person: tyrion)
-        XCTAssertEqual(starkHouse.count, 2)
-
+        // Igualdad
+        let jinxed = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        XCTAssertEqual(jinxed, starkHouse)
+        
+        // Desigualdad
+        XCTAssertNotEqual(starkHouse, lannisterHouse)
+        
     }
+    
+    
+    func testHashable() {
+        
+        
+        XCTAssertNotNil(starkHouse.hashValue)
+        
+    }
+    
+    
+    func testHouseComparison(){
+        
+        XCTAssertLessThan(lannisterHouse, starkHouse)
+    }   
     
 }

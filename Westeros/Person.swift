@@ -27,7 +27,6 @@ final class Person {
         _alias = alias
         self.house = house
     }
-    
 }
 
 // Dejamos la clase limpita, y añadimos esta variable computada en una extensión.
@@ -46,47 +45,20 @@ extension Person{
     }
 }
 
-// implementamos el protocolo hashable
-extension Person : Hashable {
-    var hashValue: Int {
+
+extension Person : Hashable{
+    var hashValue : Int{
         get{
             return proxy.hashValue
         }
     }
 }
 
-// Implemetamos el protocolo equatable
-extension Person : Equatable {
+extension Person : Equatable{
     static func ==(lhs: Person, rhs: Person) -> Bool{
         return lhs.proxy == rhs.proxy
     }
 }
-
-// INICIO DEBERES
-
-extension Person : Comparable {
-    static func >(lhs : Person, rhs: Person) -> Bool{
-        return lhs.proxy > rhs.proxy
-    }
-    
-    static func >=(lhs : Person, rhs: Person) -> Bool{
-        return lhs.proxy >= rhs.proxy
-    }
-    
-    static func <(lhs : Person, rhs: Person) -> Bool{
-        return lhs.proxy < rhs.proxy
-    }
-    
-    static func <=(lhs : Person, rhs: Person) -> Bool{
-        return lhs.proxy <= rhs.proxy
-    }
-}
-
-
-// FIN DEBERES
-
-
-
 
 
 

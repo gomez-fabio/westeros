@@ -22,10 +22,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.cyan
         
-        // Crear RootVC
-        let rootVC = UIViewController()
-        window?.rootViewController = rootVC
+        // Creamos unos modelos
+        let starkSigil = Sigil(description:"Direwolf", image: #imageLiteral(resourceName: "codeIsComing.png"))
+        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is cominng!")
         
+        let lannisterSigil = Sigil(description: "Rampant Lion", image: #imageLiteral(resourceName: "lannister.jpg"))
+        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
+        
+        // Creamos los controladores
+        let starkVC = HouseViewController(model: starkHouse)
+        let lannisterVC = HouseViewController(model: lannisterHouse)
+        
+        // Creamos los Navigations
+        let starkNav = UINavigationController(rootViewController: starkVC)
+        let lannisterNav = UINavigationController(rootViewController: lannisterVC)
+        
+        // Creamos el tab
+        let tabVC = UITabBarController()
+        tabVC.viewControllers = [lannisterNav, starkNav]
+        
+        // Asignamos el RootVC
+        window?.rootViewController = tabVC
 
         return true
     }
