@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E56CC39A1F15441E006C41DE /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56CC3981F15441E006C41DE /* HouseViewController.swift */; };
 		E56CC39B1F15441E006C41DE /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56CC3991F15441E006C41DE /* HouseViewController.xib */; };
+		E56CC39F1F155DA3006C41DE /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56CC39E1F155DA3006C41DE /* UIKitExtensions.swift */; };
+		E56CC3A11F15607D006C41DE /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56CC3A01F15607D006C41DE /* RepositoryTests.swift */; };
+		E56CC3A31F156226006C41DE /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56CC3A21F156226006C41DE /* Repository.swift */; };
 		E5C6C8C71F0C49AC00B7DC3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C6C8C61F0C49AC00B7DC3C /* AppDelegate.swift */; };
 		E5C6C8CE1F0C49AC00B7DC3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C6C8CD1F0C49AC00B7DC3C /* Assets.xcassets */; };
 		E5C6C8D11F0C49AC00B7DC3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5C6C8CF1F0C49AC00B7DC3C /* LaunchScreen.storyboard */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		E56CC3981F15441E006C41DE /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		E56CC3991F15441E006C41DE /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
+		E56CC39E1F155DA3006C41DE /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		E56CC3A01F15607D006C41DE /* RepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
+		E56CC3A21F156226006C41DE /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		E5C6C8C31F0C49AC00B7DC3C /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C6C8C61F0C49AC00B7DC3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5C6C8CD1F0C49AC00B7DC3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,9 +81,18 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		E56CC39D1F155D80006C41DE /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				E56CC39E1F155DA3006C41DE /* UIKitExtensions.swift */,
+			);
+			name = Cocoa;
+			sourceTree = "<group>";
+		};
 		E5C6C8BA1F0C49AC00B7DC3C = {
 			isa = PBXGroup;
 			children = (
+				E56CC39D1F155D80006C41DE /* Cocoa */,
 				E5EE8B1E1F0EC8830048FCF4 /* Resources */,
 				E56CC39C1F154424006C41DE /* Controllers */,
 				E5C6C8C51F0C49AC00B7DC3C /* Westeros */,
@@ -113,6 +128,7 @@
 				E5C6C8DD1F0C49AC00B7DC3C /* Info.plist */,
 				E5EE8B151F0EC0FA0048FCF4 /* HouseTests.swift */,
 				E5EE8B1F1F0ECAD10048FCF4 /* PersonTest.swift */,
+				E56CC3A01F15607D006C41DE /* RepositoryTests.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -122,6 +138,7 @@
 			children = (
 				E5EE8B171F0EC2390048FCF4 /* House.swift */,
 				E5EE8B211F0ECD8D0048FCF4 /* Person.swift */,
+				E56CC3A21F156226006C41DE /* Repository.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -245,6 +262,8 @@
 				E5EE8B181F0EC2390048FCF4 /* House.swift in Sources */,
 				E5C6C8C71F0C49AC00B7DC3C /* AppDelegate.swift in Sources */,
 				E56CC39A1F15441E006C41DE /* HouseViewController.swift in Sources */,
+				E56CC39F1F155DA3006C41DE /* UIKitExtensions.swift in Sources */,
+				E56CC3A31F156226006C41DE /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +273,7 @@
 			files = (
 				E5EE8B161F0EC0FA0048FCF4 /* HouseTests.swift in Sources */,
 				E5EE8B201F0ECAD10048FCF4 /* PersonTest.swift in Sources */,
+				E56CC3A11F15607D006C41DE /* RepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
