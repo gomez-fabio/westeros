@@ -23,19 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.cyan
         
         // Creamos unos modelos
-       let houses = Repository.local.houses
+        let houses = Repository.local.houses
         
-        
-        // Creamos los controladores
-        var controllers = [UIViewController]()
-        for house in houses{
-            controllers.append(HouseViewController(model: house).wrappedInNavigation())
-        }
-
         // Creamos el tab
         let tabVC = UITabBarController()
-        tabVC.viewControllers = controllers
-        
+        tabVC.viewControllers = houses.map {HouseViewController(model:$0).wrappedInNavigation()
+        }
+
         // Asignamos el RootVC
         window?.rootViewController = tabVC
 
