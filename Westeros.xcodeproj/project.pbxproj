@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E562B52E1F19483B00D9EFD8 /* greyjoySigil.png in Resources */ = {isa = PBXBuildFile; fileRef = E562B52A1F19483B00D9EFD8 /* greyjoySigil.png */; };
+		E562B52F1F19483B00D9EFD8 /* mormotSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = E562B52B1F19483B00D9EFD8 /* mormotSigil.png */; };
+		E562B5301F19483B00D9EFD8 /* targaryenSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = E562B52C1F19483B00D9EFD8 /* targaryenSigil.png */; };
+		E562B5311F19483B00D9EFD8 /* tyrellSigil.png in Resources */ = {isa = PBXBuildFile; fileRef = E562B52D1F19483B00D9EFD8 /* tyrellSigil.png */; };
 		E56CC39A1F15441E006C41DE /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56CC3981F15441E006C41DE /* HouseViewController.swift */; };
 		E56CC39B1F15441E006C41DE /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56CC3991F15441E006C41DE /* HouseViewController.xib */; };
 		E56CC39F1F155DA3006C41DE /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56CC39E1F155DA3006C41DE /* UIKitExtensions.swift */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E562B52A1F19483B00D9EFD8 /* greyjoySigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyjoySigil.png; sourceTree = "<group>"; };
+		E562B52B1F19483B00D9EFD8 /* mormotSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mormotSigil.png; sourceTree = "<group>"; };
+		E562B52C1F19483B00D9EFD8 /* targaryenSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = targaryenSigil.png; sourceTree = "<group>"; };
+		E562B52D1F19483B00D9EFD8 /* tyrellSigil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tyrellSigil.png; sourceTree = "<group>"; };
 		E56CC3981F15441E006C41DE /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		E56CC3991F15441E006C41DE /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
 		E56CC39E1F155DA3006C41DE /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
@@ -146,6 +154,10 @@
 		E5EE8B1E1F0EC8830048FCF4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E562B52A1F19483B00D9EFD8 /* greyjoySigil.png */,
+				E562B52B1F19483B00D9EFD8 /* mormotSigil.png */,
+				E562B52C1F19483B00D9EFD8 /* targaryenSigil.png */,
+				E562B52D1F19483B00D9EFD8 /* tyrellSigil.png */,
 				E5EE8B1A1F0EC87A0048FCF4 /* codeIsComing.png */,
 				E5EE8B1B1F0EC87A0048FCF4 /* lannister.jpg */,
 			);
@@ -238,8 +250,12 @@
 			files = (
 				E5EE8B1D1F0EC87A0048FCF4 /* lannister.jpg in Resources */,
 				E5EE8B1C1F0EC87A0048FCF4 /* codeIsComing.png in Resources */,
+				E562B5301F19483B00D9EFD8 /* targaryenSigil.png in Resources */,
 				E56CC39B1F15441E006C41DE /* HouseViewController.xib in Resources */,
 				E5C6C8D11F0C49AC00B7DC3C /* LaunchScreen.storyboard in Resources */,
+				E562B52F1F19483B00D9EFD8 /* mormotSigil.png in Resources */,
+				E562B52E1F19483B00D9EFD8 /* greyjoySigil.png in Resources */,
+				E562B5311F19483B00D9EFD8 /* tyrellSigil.png in Resources */,
 				E5C6C8CE1F0C49AC00B7DC3C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

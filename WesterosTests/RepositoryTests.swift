@@ -21,14 +21,26 @@ class RepositoryTests: XCTestCase {
         super.tearDown()
     }
     
+    // comprobamos que está instanciada la clase del repositorio local en una propiedad estática llamada local.
     func testLocalRepositoryCreation(){
         XCTAssertNotNil(Repository.local)
     }
     
+    // comprobamos que hay casas en el repositorio, y que hay 6.
     func testLocalRepositoryHousesCreation(){
         let houses = Repository.local.houses
         XCTAssertNotNil(houses)
-        XCTAssertEqual(houses.count, 2)
+        XCTAssertEqual(houses.count, 6)
     }
+    
+    // Deberes
+    func testLocalRepositoryFindHouseByName(){
+        
+//        let starkHouse = Repository.local.house(named: "targaryen")
+//        XCTAssertEqual(starkHouse,"targaryen")
+        
+//        XCTAssertNotNil(Repository.local.house(named: "targaryen"))
+    }
+    
     
 }

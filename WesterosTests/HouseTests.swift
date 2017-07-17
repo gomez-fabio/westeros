@@ -41,6 +41,10 @@ class HouseTests: XCTestCase {
         arya = Person(name: "Arya", house: starkHouse)
         tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
         
+//        let houses = Repository.local.houses
+        
+
+        
     }
     
     override func tearDown() {
@@ -53,6 +57,8 @@ class HouseTests: XCTestCase {
         
         let StarkSigil = Sigil(description: "Direwolf", image: #imageLiteral(resourceName: "codeIsComing.png"))
         let stark = House(name: "Stark", sigil: StarkSigil, words: "Winter is coming!")
+        
+        
         
         //Comprobamos que no sea nil
         XCTAssertNotNil(stark)

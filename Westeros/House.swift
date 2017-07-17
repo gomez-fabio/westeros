@@ -93,34 +93,9 @@ extension House : Hashable{
 
 // MARK: - Comparable
 extension House : Comparable{
-    static func <(lhs: House, rhs: House) -> Bool {
-        return lhs.proxyForComparison < rhs.proxyForComparison
-    }
-    
-    
+    static func <(lhs: House, rhs: House) -> Bool
+        {
+            return lhs.proxyForComparison < rhs.proxyForComparison
+        }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
