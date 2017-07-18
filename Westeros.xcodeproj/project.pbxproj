@@ -22,6 +22,9 @@
 		E585FE811F1D666D0073CE32 /* HousesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E585FE7F1F1D666D0073CE32 /* HousesTableViewController.xib */; };
 		E5BE87891F1E8ED600AAB900 /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BE87871F1E8ED600AAB900 /* MembersViewController.swift */; };
 		E5BE878A1F1E8ED600AAB900 /* MembersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BE87881F1E8ED600AAB900 /* MembersViewController.xib */; };
+		E5BE878C1F1E99E200AAB900 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BE878B1F1E99E200AAB900 /* ArrayDataSource.swift */; };
+		E5BE878E1F1E9EEC00AAB900 /* ArrayDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BE878D1F1E9EEC00AAB900 /* ArrayDataSourceTests.swift */; };
+		E5BE87901F1EA99500AAB900 /* ArrayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BE878F1F1EA99500AAB900 /* ArrayTableViewController.swift */; };
 		E5C6C8C71F0C49AC00B7DC3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C6C8C61F0C49AC00B7DC3C /* AppDelegate.swift */; };
 		E5C6C8CE1F0C49AC00B7DC3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C6C8CD1F0C49AC00B7DC3C /* Assets.xcassets */; };
 		E5C6C8D11F0C49AC00B7DC3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5C6C8CF1F0C49AC00B7DC3C /* LaunchScreen.storyboard */; };
@@ -59,6 +62,9 @@
 		E585FE7F1F1D666D0073CE32 /* HousesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HousesTableViewController.xib; sourceTree = "<group>"; };
 		E5BE87871F1E8ED600AAB900 /* MembersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
 		E5BE87881F1E8ED600AAB900 /* MembersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MembersViewController.xib; sourceTree = "<group>"; };
+		E5BE878B1F1E99E200AAB900 /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
+		E5BE878D1F1E9EEC00AAB900 /* ArrayDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSourceTests.swift; sourceTree = "<group>"; };
+		E5BE878F1F1EA99500AAB900 /* ArrayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTableViewController.swift; sourceTree = "<group>"; };
 		E5C6C8C31F0C49AC00B7DC3C /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C6C8C61F0C49AC00B7DC3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5C6C8CD1F0C49AC00B7DC3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +109,8 @@
 				E585FE7F1F1D666D0073CE32 /* HousesTableViewController.xib */,
 				E5BE87871F1E8ED600AAB900 /* MembersViewController.swift */,
 				E5BE87881F1E8ED600AAB900 /* MembersViewController.xib */,
+				E5BE878B1F1E99E200AAB900 /* ArrayDataSource.swift */,
+				E5BE878F1F1EA99500AAB900 /* ArrayTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -155,6 +163,7 @@
 				E5EE8B151F0EC0FA0048FCF4 /* HouseTests.swift */,
 				E5EE8B1F1F0ECAD10048FCF4 /* PersonTest.swift */,
 				E56CC3A01F15607D006C41DE /* RepositoryTests.swift */,
+				E5BE878D1F1E9EEC00AAB900 /* ArrayDataSourceTests.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -295,6 +304,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5BE87901F1EA99500AAB900 /* ArrayTableViewController.swift in Sources */,
+				E5BE878C1F1E99E200AAB900 /* ArrayDataSource.swift in Sources */,
 				E585FE801F1D666D0073CE32 /* HousesTableViewController.swift in Sources */,
 				E5BE87891F1E8ED600AAB900 /* MembersViewController.swift in Sources */,
 				E5EE8B221F0ECD8D0048FCF4 /* Person.swift in Sources */,
@@ -313,6 +324,7 @@
 			files = (
 				E5EE8B161F0EC0FA0048FCF4 /* HouseTests.swift in Sources */,
 				E5EE8B201F0ECAD10048FCF4 /* PersonTest.swift in Sources */,
+				E5BE878E1F1E9EEC00AAB900 /* ArrayDataSourceTests.swift in Sources */,
 				E56CC3A11F15607D006C41DE /* RepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
