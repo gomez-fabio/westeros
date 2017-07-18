@@ -16,10 +16,14 @@ final class Repository{
 
 protocol HouseFactory{
     
+    typealias Filter = (House)->Bool
+    
     var houses : [House] {get}
     
     // Devuelve una casa dado su nombre
     func house(named: String) -> House?
+    
+    func houses(filteredBy: Filter) -> [House]
     
 }
 
@@ -35,13 +39,43 @@ final class LocalFactory : HouseFactory{
             let targaryenSigil = Sigil(description: "A red three-headed dragon", image: #imageLiteral(resourceName: "targaryenSigil.png"))
             let tyrellSigil    = Sigil(description: "A golden rose on a green field", image: #imageLiteral(resourceName: "tyrellSigil.png"))
             
+            let starkURL      = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
+            let lannisterURL  = URL(string: "https://awoiaf.westeros.org/index.php/House_Lannister")!
+            let mormontURL    = URL(string: "https://awoiaf.westeros.org/index.php/House_Mormont")!
+            let greyjoyURL    = URL(string: "https://awoiaf.westeros.org/index.php/House_Greyjoy")!
+            let targaryenURL  = URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!
+            let tyrellURL     = URL(string: "https://awoiaf.westeros.org/index.php/House_Tyrell")!
+            
             // Houses
-            let stark     = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
-            let lannister = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
-            let mormont   = House(name: "Mormont", sigil: mormontSigil, words: "Here we stand!")
-            let greyjoy   = House(name: "Greyjoy", sigil: greyjoySigil, words: "We Do Not Sow")
-            let targaryen = House(name: "Targaryen", sigil: targaryenSigil, words: "Fire and Blood")
-            let tyrell    = House(name: "Tyrell", sigil: tyrellSigil, words: "Growing Strong")
+            let stark     = House(name: "Stark",
+                                  sigil: starkSigil,
+                                  words: "Winter is coming!",
+                                  url: starkURL)
+            
+            let lannister = House(name: "Lannister",
+                                  sigil: lannisterSigil,
+                                  words: "Hear me roar!",
+                                  url: lannisterURL)
+            
+            let mormont   = House(name: "Mormont",
+                                  sigil: mormontSigil,
+                                  words: "Here we stand!",
+                                  url: mormontURL)
+            
+            let greyjoy   = House(name: "Greyjoy",
+                                  sigil: greyjoySigil,
+                                  words: "We Do Not Sow",
+                                  url:greyjoyURL)
+            
+            let targaryen = House(name: "Targaryen",
+                                  sigil: targaryenSigil,
+                                  words: "Fire and Blood",
+                                  url: targaryenURL)
+            
+            let tyrell    = House(name: "Tyrell",
+                                  sigil: tyrellSigil,
+                                  words: "Growing Strong",
+                                  url: tyrellURL)
             
             // Characters
             // -- Stark
@@ -99,13 +133,20 @@ final class LocalFactory : HouseFactory{
             tyrell.add(person: margaery)
             tyrell.add(person: olenna)
             
-            return [stark, lannister, mormont, greyjoy, targaryen, tyrell].sorted(by: >)
+            return [stark, lannister, mormont, greyjoy, targaryen, tyrell].sorted()
         }
     }
 
     func house(named: String) -> House?
     {
-        return houses.first{$0.name == named}
+        let house = houses.filter{$0.name.uppercased() == named.uppercased()}.first
+        return house
+    }
+    
+    //func houses(filteredBy: Filter) -> [House] {   // es lo mismo que lo de abajo
+    func houses(filteredBy: (House) -> Bool) -> [House] {
+        let filtered = Repository.local.houses.filter(filteredBy)
+        return filtered
     }
     
 }

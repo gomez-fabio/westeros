@@ -29,6 +29,42 @@ class HouseViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupUI(){
+        // Mecanismo de comunicación target accion
+        // Creamos un botón a la barra del navigationController, necesitamos el texto y la accion que hacer cuando se pulse
+        let wiki = UIBarButtonItem(title: "Wiki",
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(displayWiki))
+
+        let members = UIBarButtonItem(title: "Members",
+                                      style: .plain,
+                                      target: self,
+                                      action: #selector(displayMembers))
+        // Añadimos
+        navigationItem.rightBarButtonItems = [members, wiki]
+    }
+    
+    @objc func displayMembers(){
+        
+        // Creamos el membersVC
+        let membersVC = MembersViewController(model: model.sortedMembers())
+        
+        // LO pusheamos
+        navigationController?.pushViewController(membersVC, animated: true)
+        
+        
+    }
+    @objc func displayWiki(){
+        
+        // Creamos un WikiVC
+        let wikiVC = WikiViewController(model: model)
+        
+        // Lo cargamos en el navigation
+        navigationController?.pushViewController(wikiVC,
+                                                 animated: true)
+    }
+    
     // Sincronizamos vista y modelo
     func syncViewWithModel(){
         houseNameView.text = "House \(model.name)"
@@ -38,6 +74,8 @@ class HouseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        setupUI()
         
         syncViewWithModel()
     }

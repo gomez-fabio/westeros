@@ -22,13 +22,14 @@ final class House{
     let name    : String
     let sigil   : Sigil
     let words   : Words
+    let wikiURL : URL
     
-    private var _members  : Members
+    internal var _members  : Members
 
     
     // Inicializador
-    init(name: String, sigil: Sigil, words: Words){
-        (self.name, self.sigil, self.words) = (name, sigil, words)
+    init(name: String, sigil: Sigil, words: Words, url: URL){
+        (self.name, self.sigil, self.words, self.wikiURL) = (name, sigil, words, url)
         _members = Members() // Creo un set vacío
     }
 }
@@ -52,11 +53,28 @@ extension House{
     }
     
     func add(person : Person){
-        guard person.house.name == self.name else {  // Con guard validamos datos de entradas
+        guard person.house.name == self.name else {  // Con guard validamos datos de entradas, no deja meter una persona que no es de esa casa
             return
         }
         _members.insert(person)
     }
+
+    // Versión variadica (los ... indica que puede recibir n parametros, 
+    // lo llamamos así p.ej. lannister.add(persons: tyrion, jaime, cersei)
+    // esto es sobrecarga de métodos, dos métodos con el mismo nombre y que el compilador elige 
+    // según los parametros que recibe, igual que en java
+    func add(persons: Person...){
+        for person in persons{
+            add(person: person)
+        }
+    }
+    
+    // Sorted [Person]
+    func sortedMembers() -> [Person]{
+        return _members.sorted()
+    }
+    
+    
 }
 
 

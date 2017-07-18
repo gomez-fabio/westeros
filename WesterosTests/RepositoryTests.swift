@@ -11,9 +11,12 @@ import XCTest
 
 class RepositoryTests: XCTestCase {
     
+    var localHouses : [House]!
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        localHouses = Repository.local.houses
     }
     
     override func tearDown() {
@@ -33,13 +36,20 @@ class RepositoryTests: XCTestCase {
         XCTAssertEqual(houses.count, 6)
     }
     
-    // Deberes
-    func testLocalRepositoryFindHouseByName(){
+    func testLocalRepositoryReturnsSortedArrayofHouses(){
         
-//        let starkHouse = Repository.local.house(named: "targaryen")
-//        XCTAssertEqual(starkHouse,"targaryen")
-        
-//        XCTAssertNotNil(Repository.local.house(named: "targaryen"))
+        // el array que me viene ya estaba ordenado, y como lo comparo con el mismo array vuelto a ordenar, tiene que ser igual.
+        XCTAssertEqual(localHouses, localHouses.sorted())
+    }
+    
+    func testLocalRepoReturnsHousesByNameCaseInsensitively(){
+        let stark = Repository.local.house(named: "sTarK")
+        XCTAssertEqual(stark?.name, "Stark")
+    }
+    
+    func testHouseFiltering(){
+        let filtered = Repository.local.houses(filteredBy: {$0.count == 1})
+        XCTAssertEqual(filtered.count, 1)
     }
     
     
